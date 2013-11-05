@@ -4,9 +4,13 @@ title: The Archive
 ---
 
 <div id="home">
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+	{% for introduction in site.data.introductions %}
+	<h1>{{ introduction.title }}</h1>
+	<p class="lead">{{ introduction.text }}</p>	
+	{% endfor %}
+
+	{% for heading in site.data.headings %}
+	<h2>{{ heading.title }}</h2>
+	<p>{{ heading.text }}</p>
+	{% endfor %}
 </div>
